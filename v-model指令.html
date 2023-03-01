@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>v-model指令</title>
+    <!-- 简介：：使得表单中输入的内容与下方的标题内容同步，并通过一个按钮直接设置标题内容 -->
+</head>
+
+<body>
+    <div id="app">
+        <input type="button" value="修改message为酷丁🐟" @click="setM">
+        <input type="text" v-model="message" @keyup.enter="getM">
+        <h2>{{ message }}</h2>
+    </div>
+    <!-- 开发环境版本，包含了有帮助的命令行警告 -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+        var app = new Vue({
+            el:"#app",
+            data:{
+                message:"黑马程序员"
+            },
+            methods: {
+                getM:function(){
+                    alert(this.message);
+                },
+                setM:function(){
+                    this.message ="酷丁鱼";
+                }
+            },
+        })
+    </script>
+</body>
+
+</html>
